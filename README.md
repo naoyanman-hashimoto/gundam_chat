@@ -5,6 +5,8 @@
   特に、最近ガンダムに興味を持ったビギナー向けの優しい雰囲気が特徴です。
 
 # テーブル設計
+## ER図
+<img width="500" alt="gundam_chatのER図" src="gundam_chat.png">
 
 ## users テーブル
 | Column             | Type   | Options     |
