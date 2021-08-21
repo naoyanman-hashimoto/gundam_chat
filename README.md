@@ -1,24 +1,54 @@
 # README
+# アプリ名
+  ## GUNDAM_CHAT
+  ガンダム好きが集まり、気軽にコミュニケーションを取れるチャットアプリです。  
+  特に、最近ガンダムに興味を持ったビギナー向けの優しい雰囲気が特徴です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| name               | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
 
-* Ruby version
+### Association
+- has_many :room_users
+- has_many :rooms, through: :room_users
+- has_many :messages
 
-* System dependencies
+## rooms テーブル
+| Column      | Type    | Options     |
+| ----------- | ------- | ----------- |
+| category_id | integer | null: false |
+| series_id   | integer | null: false |
+| name        | string  | null: false |
 
-* Configuration
+### Association
+- has_many :room_users
+- has_many :users, through: :room_users
+- has_many :messages
 
-* Database creation
 
-* Database initialization
+## room_users テーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :room
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## message テーブル
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     |                                |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :user
+- belongs_to :room
