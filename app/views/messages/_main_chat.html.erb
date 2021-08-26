@@ -1,0 +1,78 @@
+<div class="chat-header">
+  <div class="left-header">
+    <div class="header-title">
+      テストルーム
+    </div>
+  </div>
+  <div class="center-header">
+    <div class="header-center-button">
+      <a href="#">ホーム</a>
+    </div>
+    <div class="header-center-button">
+      <a href="#">アバウト</a>
+    </div>
+    <div class="header-center-button">
+      <a href="#">宇宙世紀</a>
+    </div>
+    <div class="header-center-button">
+      <a href="#">お知らせ</a>
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <%#ルーム作成者の場合には削除権限を与える%>
+      <a href="#">ルームを削除する</a>
+      <%#ルーム作成者の場合には削除権限を与える%>
+      <%#ログイン状態の条件分岐を設定予定%>
+      <%#<a href="#">ログイン</a>%>
+      <%#<a href="#">サインイン</a>%>
+      <a href="#">ログアウト</a>
+      <%#ログイン状態の条件分岐を設定予定%>
+    </div>
+  </div>
+</div>
+
+<div class="messages">
+  <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        Tom
+      </div>
+      <div class="message-date">
+        2021/08/26(Thu) 15:10:30
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        ガンダム面白い！
+      </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        Tumu
+      </div>
+      <div class="message-date">
+        2021/08/26(Thu) 15:30:10
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        それな！
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form">
+  <div class="form-input">
+    <input class="form-message" placeholder= "type a message">
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <input type="file" class="hidden">
+    </label>
+  </div>
+  <input class="form-submit" type="submit" value= "送信">
+</div>
