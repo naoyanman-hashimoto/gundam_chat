@@ -2,8 +2,8 @@ class Room < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :series
-  belongs_to :series_gaiden
-  belongs_to :gunpura
+  belongs_to :series_gaiden, optional: true
+  belongs_to :gunpura, optional: true
 
   has_many :room_users
   has_many :users, through: :room_users
