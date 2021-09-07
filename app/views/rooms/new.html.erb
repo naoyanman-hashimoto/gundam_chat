@@ -1,13 +1,13 @@
 <div class='chat-room-form'>
   <h1>新規チャットルーム</h1>
   <%=form_with model: @room, local: true do |f|%>
-    <%= render 'shared/error_messages', model: f.object %><br/>
+    <%= render 'shared/error_messages', model: f.object %>
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
         <label class='chat-room-form__label' for='chat_room_カテゴリー'>カテゴリー</label>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"category-form"}) %>
       </div>
     </div>
 
@@ -16,7 +16,7 @@
         <label class='chat-room-form__label' for='chat_room_シリーズ'>シリーズ</label>
       </div>
       <div class='chat-room-form__field--right'>
-        <%= f.collection_select(:series_id, Series.all, :id, :name, {}, {class:"select-box"}) %>
+        <%= f.collection_select(:series_id, Series.all, :id, :name, {}, {class:"select-box", id:"series-form"}) %>
       </div>
     </div>
 
@@ -47,7 +47,7 @@
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'></div>
       <div class='chat-room-form__field--right'>
-        <%= f.submit class: 'chat-room-form__action-btn'%>
+        <%= f.submit class: 'chat-room-form__action-btn', id:"submit"%>
       </div>
     </div>
 

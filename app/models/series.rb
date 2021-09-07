@@ -15,7 +15,20 @@ class Series < ActiveHash::Base
     {id: 12, name: '機動戦士ガンダムNT'},
     {id: 13, name: '機動戦士ガンダム 閃光のハサウェイ'},
     {id: 14, name: '機動戦士ガンダムF91'},
-    {id: 15, name: '機動戦士Vガンダム'}
+    {id: 15, name: '機動戦士Vガンダム'},
+    {id: 16, name: '機動武闘伝Gガンダム'},
+    {id: 17, name: '新機動戦記ガンダムW'},
+    {id: 18, name: '機動新世紀ガンダムX'},
+    {id: 19, name: '∀ガンダム'},
+    {id: 20, name: '機動戦士ガンダムSEED'},
+    {id: 21, name: '機動戦士ガンダムOO'},
+    {id: 22, name: '機動戦士ガンダムAGE'},
+    {id: 23, name: 'ガンダム Gのレコンギスタ'},
+    {id: 24, name: '機動戦士ガンダム 鉄血のオルフェンズ'},
+    {id: 25, name: 'HG'},
+    {id: 26, name: 'RG'},
+    {id: 27, name: 'MG'},
+    {id: 28, name: 'PG'}
   ]
     include ActiveHash::Associations
     has_many :rooms
