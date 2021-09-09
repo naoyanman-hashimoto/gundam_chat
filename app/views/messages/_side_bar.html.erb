@@ -9,52 +9,101 @@
 
 <div class="rooms">
   <%# 宇宙世紀モノ %>
+  <%# category_idが1のカテゴリーを表示 %>
   <div class="category">
-    <span>宇宙世紀モノ</span>
+    <% @category.each do |category| %>
+      <div class="category-name">
+        <% if category.id == 1 %>
+          <%= category.name %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  
+  <%# series_idが1以上、15以下のシリーズ名を順番に取り出す %>
   <div class="series">
-    <span>機動戦士ガンダム(宇宙世紀0079)</span>
-    <div class="room-name">
-      <a href="#">テストルーム</a>
-    </div>
-  </div>
-
-  <div class="series">
-    <span>ガンダム0083 STARDUST MEMORY(宇宙世紀0083)</span>
-    <div class="room-name">
-      <a href="#">テストルーム2</a>
-    </div>
-  </div>
-
-  <div class="series">
-    <span>Zガンダム(宇宙世紀0087-88)</span>
-    <div class="room-name">
-      <a href="#">テストルーム3</a>
-    </div>
+    <% @series.each do |series| %>
+      <div class="series-name">
+        <% if series.id >= 1 && series.id <= 15 %>
+          <%= series.name %>
+          <% @rooms.each do |room| %>
+            <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
+            <% if series.id == room.series_id %>
+              <div class="room">
+                <div class="room-name">
+                  <a href="#"><%= room.name %></a>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <%# 宇宙世紀モノ %>
+  
   <%# 宇宙世紀以外 %>
+  <%# category_idが2のカテゴリーを表示 %>
   <div class="category">
-    <span>宇宙世紀外伝</span>
+    <% @category.each do |category| %>
+      <div class="category-name">
+        <% if category.id == 2 %>
+          <%= category.name %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
+  <%# series_idが16以上、24以下のシリーズ名を順番に取り出す %>
+  <div class="series">
+    <% @series.each do |series| %>
+      <div class="series-name">
+        <% if series.id >= 16 && series.id <= 24 %>
+          <%= series.name %>
+          <% @rooms.each do |room| %>
+            <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
+            <% if series.id == room.series_id %>
+              <div class="room">
+                <div class="room-name">
+                  <a href="#"><%= room.name %></a>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%# 宇宙世紀以外 %>
 
-  <div class="series">
-    <span>新機動戦記ガンダムW</span>
-    <div class="room-name">
-      <a href="#">テストルーム4</a>
-    </div>
-  </div>
-  <%# 宇宙世紀以外 %>
   <%# ガンプラ %>
+  <%# category_idが3のカテゴリーを表示 %>
   <div class="category">
-    <span>ガンプラ</span>
+    <% @category.each do |category| %>
+      <div class="category-name">
+        <% if category.id == 3 %>
+          <%= category.name %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
+  <%# series_idが25以上のシリーズ名を順番に取り出す %>
   <div class="series">
-    <span>HG</span>
-    <div class="room-name">
-      <a href="#">テストルーム5</a>
-    </div>
+    <% @series.each do |series| %>
+      <div class="series-name">
+        <% if series.id >= 25 %>
+          <%= series.name %>
+          <% @rooms.each do |room| %>
+            <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
+            <% if series.id == room.series_id %>
+              <div class="room">
+                <div class="room-name">
+                  <a href="#"><%= room.name %></a>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <%# ガンプラ %>
 
