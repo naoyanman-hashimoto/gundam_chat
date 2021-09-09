@@ -46,11 +46,27 @@
   color: white;
   padding: 20px 0;
   font-size: 14px;
+  transition: 0.3s;
+}
+.series--name{
+  transition: 0.5s;
+}
+.series-name:hover{
+  background-color:rgba($color: #000000, $alpha: 0.2);
+  transition: 0.5s;
+  .series--name{
+    font-size: 1.1rem;
+    transition: 0.5s;
+  }
 }
 .room-name a{
   text-decoration: none;
   color: silver;
   border-bottom: dotted 1px darkgray;
+}
+.room-name a:hover{
+  color: red;
+  transition: 0.3s;
 }
 // メインチャット部
 .chat{
