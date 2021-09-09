@@ -1,4 +1,11 @@
 class RoomsController < ApplicationController
+
+  def index
+    @rooms = Room.all
+    @category = Category.all
+    @series = Series.all
+  end
+
   def new
     @room = Room.new
   end
