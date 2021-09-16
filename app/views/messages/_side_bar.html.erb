@@ -11,30 +11,33 @@
   <%# 宇宙世紀モノ %>
   <%# category_idが1のカテゴリーを表示 %>
   <div class="category">
-    <% @category.each do |category| %>
-      <div class="category-name">
-        <% if category.id == 1 %>
-          <%= category.name %>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="category-name">
+      <% @category.each do |category| %>
+          <% if category.id == 1 %>
+            <%= category.name %>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="openbtn-parent"><span></span> <span></span></div>
   </div>
   <%# series_idが1以上、15以下のシリーズ名を順番に取り出す %>
   <div class="series">
     <% @series.each do |series| %>
       <div class="series-name">
         <% if series.id >= 1 && series.id <= 15 %>
-          <span class="series--name"><%= series.name %></span>
-          <% @rooms.each do |room| %>
-            <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
-            <% if series.id == room.series_id %>
-              <div class="room">
+          <span class="series--name"><%= series.name %>
+            <div class="openbtn-child"><span></span> <span></span></div>
+          </span>
+          <div class="room">
+            <% @rooms.each do |room| %>
+              <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
+              <% if series.id == room.series_id %>
                 <div class="room-name">
                   <%= link_to room.name, room_messages_path(room) %>
                 </div>
-              </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         <% end %>
       </div>
     <% end %>
@@ -44,30 +47,33 @@
   <%# 宇宙世紀以外 %>
   <%# category_idが2のカテゴリーを表示 %>
   <div class="category">
-    <% @category.each do |category| %>
-      <div class="category-name">
+    <div class="category-name">
+      <% @category.each do |category| %>
         <% if category.id == 2 %>
           <%= category.name %>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <div class="openbtn-parent"><span></span> <span></span></div>
   </div>
   <%# series_idが16以上、24以下のシリーズ名を順番に取り出す %>
   <div class="series">
     <% @series.each do |series| %>
       <div class="series-name">
         <% if series.id >= 16 && series.id <= 24 %>
-          <span class="series--name"><%= series.name %></span>
-          <% @rooms.each do |room| %>
-            <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
-            <% if series.id == room.series_id %>
-              <div class="room">
+          <span class="series--name"><%= series.name %>
+            <div class="openbtn-child"><span></span> <span></span></div>
+          </span>
+          <div class="room">
+            <% @rooms.each do |room| %>
+              <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
+              <% if series.id == room.series_id %>
                 <div class="room-name">
                   <a href="#"><%= room.name %></a>
                 </div>
-              </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         <% end %>
       </div>
     <% end %>
@@ -77,30 +83,33 @@
   <%# ガンプラ %>
   <%# category_idが3のカテゴリーを表示 %>
   <div class="category">
-    <% @category.each do |category| %>
-      <div class="category-name">
+    <div class="category-name">
+      <% @category.each do |category| %>
         <% if category.id == 3 %>
           <%= category.name %>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <div class="openbtn-parent"><span></span> <span></span></div>
   </div>
   <%# series_idが25以上のシリーズ名を順番に取り出す %>
   <div class="series">
     <% @series.each do |series| %>
       <div class="series-name">
         <% if series.id >= 25 %>
-          <span class="series--name"><%= series.name %></span>
-          <% @rooms.each do |room| %>
-            <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
-            <% if series.id == room.series_id %>
-              <div class="room">
+          <span class="series--name"><%= series.name %>
+            <div class="openbtn-child"><span></span> <span></span></div>
+          </span>
+          <div class="room">
+            <% @rooms.each do |room| %>
+              <%# seres_idとroomのseries.idが同じであれば、room名を表示 %>
+              <% if series.id == room.series_id %>
                 <div class="room-name">
                   <a href="#"><%= room.name %></a>
                 </div>
-              </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         <% end %>
       </div>
     <% end %>

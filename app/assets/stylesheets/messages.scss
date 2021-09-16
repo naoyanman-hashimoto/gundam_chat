@@ -38,36 +38,118 @@
 .category{
   font-size: 1.6rem;
   color: white;
-  padding-left: 5px;
+  padding:0 5px;
   width: calc(300px - 20px - 20px);
   background-color: skyblue;
+  display: flex;
+  margin: 10px 0;
+  cursor: pointer;
 }
+// 親ボタン外側
+.openbtn-parent{
+  position: relative;
+  transition: all.4s;
+  background: #57a2c7;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0 0 0 auto;
+}
+// 親ボタン内側
+.openbtn-parent span{
+  display: inline-block;
+  position: absolute;
+  left: 12px;
+  height: 3px;
+  width: 45%;
+  background: #fff;
+}
+.openbtn-parent span:nth-of-type(1){
+  top: 17px;
+}
+.openbtn-parent span:nth-of-type(2){
+  top: 10px;
+  left: 19px;
+  height: 45%;
+  width: 3px;
+}
+// 親ボタンクリック後
+.openbtn-parent.active span:nth-of-type(2){
+  opacity: 0;
+}
+
 .series{
   color: white;
-  padding: 20px 0;
   font-size: 14px;
-  transition: 0.3s;
+  display: none;
+}
+.series.open{
+  display: block;
 }
 .series--name{
   transition: 0.5s;
+  display: flex;
+  cursor: pointer;
 }
 .series-name:hover{
   background-color:rgba($color: #000000, $alpha: 0.2);
-  transition: 0.5s;
+  transition: 0.3s;
+  color: red;
   .series--name{
-    font-size: 1.1rem;
-    transition: 0.5s;
+    transition: 0.2s;
   }
+}
+
+// 子供ボタン外側
+.openbtn-child{
+  position: relative;
+  transition: all.4s;
+  background: #57a2c7;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  margin: 0 0 0 auto;
+}
+// 子供ボタン内側
+.openbtn-child span{
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  height: 2px;
+  width: 50%;
+  background: #fff;
+}
+.openbtn-child span:nth-of-type(1){
+  top: 9px;
+}
+.openbtn-child span:nth-of-type(2){
+  top: 5px;
+  left: 9px;
+  height: 50%;
+  width: 2px;
+}
+// 子供ボタンクリック後
+.openbtn-child.active span:nth-of-type(2){
+  opacity: 0;
+}
+.room{
+  display: none;
+}
+.room.open{
+  display: block;
 }
 .room-name a{
   text-decoration: none;
   color: silver;
+  transition: 0.3s;
   border-bottom: dotted 1px darkgray;
 }
 .room-name a:hover{
-  color: red;
+  color: skyblue;
   transition: 0.3s;
+  font-size: 1.1rem;
 }
+
 // メインチャット部
 .chat{
   background-color: #ffffff;
